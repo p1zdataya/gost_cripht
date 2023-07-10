@@ -59,19 +59,19 @@ if __name__ == '__main__':
 
     while True:
         try:
-            option = int(input(f'Encrypt -TEXT-> [1]\nDecrypt -HEX-> [0]\nInput: '))
+            option = int(input(f'Выбрать режим:\nЗашифровать - 1\nДешифровать - 0\nВведите:'))
         except:
-            print(f'Follow to instructions')
+            print(f'Повторите ещё раз!')
 
         if option == 1 or option == 0:
             break
         else:
-            print(f'Follow to instructions')
+            print(f'Повторите ещё раз!')
 
     if option:
-        data = text_str = input(f'Text: ').encode().hex()
+        data = text_str = input(f'Текст: ').encode().hex()
     else:
-        data = text_str = input('Hex (0x<...>): ')
+        data = text_str = input('Hex-код (0x<...>): ')
 
     list_of_string = list()
     result_list = list()
@@ -92,8 +92,8 @@ if __name__ == '__main__':
             result_list.append(ct)
 
     print('=' * 40)
-    print(f'Text: {data}')
+    print(f'Исходный текст: {data}')
     if option:
-        print('Encode: ', *[hex(i)[2:] for i in result_list], sep='')
+        print('Зашифрованный: ', *[hex(i)[2:] for i in result_list], sep='')
     else:
-        print('Decode: ', *[hex(i)[2:] for i in result_list], sep='')
+        print('Расшифрованный: ', *[hex(i)[2:] for i in result_list], sep='')
