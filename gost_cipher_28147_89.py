@@ -94,6 +94,6 @@ if __name__ == '__main__':
     print('=' * 40)
     print(f'Исходный текст: {data}')
     if option:
-        print('Зашифрованный: ', *[hex(i)[2:] for i in result_list], sep='')
+        print('Зашифрованный:', "".join([hex(i)[2:] for i in result_list]))
     else:
-        print('Расшифрованный: ', *[hex(i)[2:] for i in result_list], sep='')
+        print('Расшифрованный: ', destr:="".join([hex(i)[2:] for i in result_list]), "\n", "Текст: ", bytes.fromhex(destr).decode("ASCII"), sep="")
